@@ -3,36 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rock Paper Scissors — Starter</title>
-    <style>
-      :root{--bg:#0f1724;--card:#111827;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
-      *{box-sizing:border-box}
-      html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
-      body{background:linear-gradient(180deg,#07102a 0%,#081226 100%);color:#e6eef6;display:flex;align-items:center;justify-content:center}
-      .app-root{width:100%;max-width:720px;padding:32px}
-      .site-header{text-align:center;margin-bottom:18px}
-      h1{margin:0;font-size:clamp(20px,4vw,32px);letter-spacing:0.6px}
-      .subtitle{color:var(--muted);margin:6px 0 0}
-
-      .game-area{background:var(--glass);backdrop-filter:blur(6px);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:16px;align-items:center}
-      .scoreboard{display:flex;gap:20px;color:var(--muted);font-weight:600}
-
-      .choices{display:flex;gap:12px}
-      .choice{background:transparent;border:1px solid rgba(255,255,255,0.08);color:inherit;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:16px}
-      .choice:hover{border-color:var(--accent);transform:translateY(-3px)}
-
-      .result{min-height:36px;display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700}
-
-      .site-footer{text-align:center;margin-top:12px;color:var(--muted);font-size:13px}
-
-      @media(min-width:640px){.app-root{padding:48px}}
-    </style>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app-root">
       <header class="site-header">
-        <h1>Rock • Paper • Scissors</h1>
-        <p class="subtitle">A tiny starter template</p>
+        <h1>Rock-Paper-Scissors</h1>
+        <p class="subtitle">make your move</p>
       </header>
 
       <section class="game-area" aria-live="polite">
@@ -53,31 +31,6 @@
       <footer class="site-footer">Tip: Click a choice to play once.</footer>
     </main>
 
-    <script>
-      (function(){
-        const choices = ['rock','paper','scissors'];
-        let playerScore = 0, computerScore = 0;
-        const elResult = document.getElementById('result');
-        const elPlayer = document.getElementById('player-score');
-        const elComputer = document.getElementById('computer-score');
 
-        function compPick(){ return choices[Math.floor(Math.random()*choices.length)]; }
-        function decide(p,c){ if(p===c) return 'tie';
-          if((p==='rock'&&c==='scissors')||(p==='paper'&&c==='rock')||(p==='scissors'&&c==='paper')) return 'win';
-          return 'lose'; }
-
-        document.querySelectorAll('.choice').forEach(btn=>{
-          btn.addEventListener('click', ()=>{
-            const player = btn.dataset.choice;
-            const computer = compPick();
-            const outcome = decide(player,computer);
-            if(outcome==='win'){ playerScore++; elResult.textContent = `You win — ${player} beats ${computer}` }
-            else if(outcome==='lose'){ computerScore++; elResult.textContent = `You lose — ${computer} beats ${player}` }
-            else elResult.textContent = `Tie — both chose ${player}`;
-            elPlayer.textContent = playerScore; elComputer.textContent = computerScore;
-          });
-        });
-      })();
-    </script>
   </body>
 </html>
