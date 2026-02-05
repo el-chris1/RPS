@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <main class="app-root">
@@ -20,9 +21,9 @@
         </div>
 
         <div class="choices" role="group" aria-label="Game choices">
-          <button class="choice" data-choice="rock">✊ Rock</button>
-          <button class="choice" data-choice="paper">✋ Paper</button>
-          <button class="choice" data-choice="scissors">✌️ Scissors</button>
+          <button class="choice" onclick="playRound('rock')"">✊ Rock</button>
+          <button class="choice" onclick="playRound('paper')"">✋ Paper</button>
+          <button class="choice" onclick="playRound('scissors')"">✌️ Scissors</button>
         </div>
 
         <div class="result" id="result">Make your move</div>

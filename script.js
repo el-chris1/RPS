@@ -1,18 +1,47 @@
 let computerScore = 0;
 let playerScore = 0;    
-let computerChoice
+
 const choices = ['rock', 'paper', 'scissors'];
 // rock = 0 paper = 1 scissors = 2
 function getComputerChoice() {
-Math.floor(Math.random() * 3)
+return Math.floor(Math.random() * 3)
 }
+let computerChoice = getComputerChoice();
 
- if computerChoice === 0
-if playscore is === 2
+function playRound(playerChoice) {
+    let computerNumber = getComputerChoice();
+    let computerchoice = choices[computerNumber];
+    
+    document.getElementsById("result").textcontent = 
+    " you choice " + playerChoice + " computer choice " + computerchoice;
+}
+if (player == computerchoice) {
+documwnts.getElementsById("result").textcontent = " it's a tie! you both chose " + playerChoice;
+}
+else if (playerChoice === "rock") {
 
-else getComputerChoice === 1
+  if (computerChoice === "scissors") {
+    playerScore++;
+    document.getElementById("result").textContent =
+      "You win! Rock beats Scissors.";
+  } else {
+    computerScore++;
+    document.getElementById("result").textContent =
+      "Computer wins! Paper beats Rock.";
+  }
 
-if computerScore === 3 || playerScore === <3 {
+}
+document.getElementById("player-score").textContent = playerScore;
+document.getElementById("computer-score").textContent = computerScore;
+
+else if (playerChoice === "paper") {
+   // paper vs rock
+   // paper vs scissors
+}  if (computerChoice === "rock") {
+if (computerScore === 3) {
     return 'computer Wins!'
+} 
+if (playerScore === 3) {
+    return 'player Wins!'
 }
 
