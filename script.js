@@ -44,4 +44,4 @@ if (computerScore === 3) {
 if (playerScore === 3) {
     return 'player Wins!'
 }
-
+}
