@@ -1,30 +1,52 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rock Paper Scissors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-3V5gk1zqgq6Y6V/1P5vF1Z1Gz6sQJZq3n1F5F5Qk1Q9E2nG1Z6Y" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-dark py-2">
+      <div class="container">
+        <span class="navbar-brand fw-bold">Rock · Paper · Scissors</span>
+      </div>
+    </nav>
 
-      <section class="game-area" aria-live="polite">
-        <div class="scoreboard">
-          <div>Player: <span id="player-score">0</span></div>
-          <div>Computer: <span id="computer-score">0</span></div>
-        </div>
+    <main class="app-root container py-5 d-flex flex-column align-items-center">
+      <div class="w-100" style="max-width:720px;">
+        <section class="card bg-transparent border-0">
+          <div class="card-body p-4 game-area" aria-live="polite">
+            <div class="d-flex align-items-center scoreboard mb-3">
+              <div class="text-muted score-chip">Player: <span id="player-score" class="fw-bold">0</span></div>
+              <div class="text-muted score-chip">Computer: <span id="computer-score" class="fw-bold">0</span></div>
+            </div>
 
-        <div class="choices" role="group" aria-label="Game choices">
-          <button class="choice" onclick="playRound('rock')">✊ Rock</button>
-          <button class="choice" onclick="playRound('paper')">✋ Paper</button>
-          <button class="choice" onclick="playRound('scissors')">✌️ Scissors</button>
-        </div>
-        <div class="result" id="result">Make your move</div>
-        <button class="reset-btn" onclick="resetGame()">🔄 Reset Game</button>
-      </section>
 
-      <footer class="site-footer">Tip: Click a choice to play once.</footer>
+            <!-- Large choice buttons placed under the scoreboard -->
+            <div class="choices-row w-100 d-flex gap-2 justify-content-center mb-2">
+              <button class="choice-btn btn btn-outline-light btn-lg" onclick="playRound('rock')">✊ Rock</button>
+              <button class="choice-btn btn btn-outline-light btn-lg" onclick="playRound('paper')">✋ Paper</button>
+              <button class="choice-btn btn btn-outline-light btn-lg" onclick="playRound('scissors')">✌️ Scissors</button>
+            </div>
+
+            <div class="result mt-3" id="result">Make your move</div>
+
+            <div class="d-flex justify-content-center mt-3">
+              <button class="reset-btn btn btn-primary" onclick="resetGame()">Reset Game</button>
+            </div>
+          </div>
+        </section>
+
+        <footer class="site-footer text-center mt-3">Tip: Click a choice to play once.</footer>
+      </div>
     </main>
 
-  <script src="script.js"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-7y7VnX1Hq8+f1Gv1J5Y" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </body>
 </html>
