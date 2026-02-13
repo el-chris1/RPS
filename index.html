@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
 </head>
 
       <section class="game-area" aria-live="polite">
@@ -19,8 +18,8 @@
           <button class="choice" onclick="playRound('paper')">✋ Paper</button>
           <button class="choice" onclick="playRound('scissors')">✌️ Scissors</button>
         </div>
-
         <div class="result" id="result">Make your move</div>
+        <button class="reset-btn" onclick="resetGame()">🔄 Reset Game</button>
       </section>
 
       <footer class="site-footer">Tip: Click a choice to play once.</footer>
